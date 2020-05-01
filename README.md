@@ -37,40 +37,40 @@
 ## Install
 
 ```bash
-bash <(curl -L https://raw.githubusercontent.com/dofy/7th-vim/master/install.sh) -i
+bash <(curl -L https://raw.githubusercontent.com/zero-MK/7th-vim/master/install.sh) -i
 # or
-bash <(wget --no-check-certificate https://raw.githubusercontent.com/dofy/7th-vim/master/install.sh -O -) -i
+bash <(wget --no-check-certificate https://raw.githubusercontent.com/zero-MK/7th-vim/master/install.sh -O -) -i
 ```
 ### Check Dependent
 
 ```bash
-bash <(curl -L https://raw.githubusercontent.com/dofy/7th-vim/master/install.sh) -c
+bash <(curl -L https://raw.githubusercontent.com/zero-MK/7th-vim/master/install.sh) -c
 # or
-bash <(wget --no-check-certificate https://raw.githubusercontent.com/dofy/7th-vim/master/install.sh -O -) -c
+bash <(wget --no-check-certificate https://raw.githubusercontent.com/zero-MK/7th-vim/master/install.sh -O -) -c
 ```
 
 ### Show Language Supported List
 
 ```bash
-bash <(curl -L https://raw.githubusercontent.com/dofy/7th-vim/master/install.sh) -l
+bash <(curl -L https://raw.githubusercontent.com/zero-MK/7th-vim/master/install.sh) -l
 # or
-bash <(wget --no-check-certificate https://raw.githubusercontent.com/dofy/7th-vim/master/install.sh -O -) -l
+bash <(wget --no-check-certificate https://raw.githubusercontent.com/zero-MK/7th-vim/master/install.sh -O -) -l
 ```
 
 ### Help
 
 ```bash
-bash <(curl -L https://raw.githubusercontent.com/dofy/7th-vim/master/install.sh) -h
+bash <(curl -L https://raw.githubusercontent.com/zero-MK/7th-vim/master/install.sh) -h
 # or
-bash <(wget --no-check-certificate https://raw.githubusercontent.com/dofy/7th-vim/master/install.sh -O -) -h
+bash <(wget --no-check-certificate https://raw.githubusercontent.com/zero-MK/7th-vim/master/install.sh -O -) -h
 ```
 
 ## Update
 
 ```bash
-bash <(curl -L https://raw.githubusercontent.com/dofy/7th-vim/master/install.sh) -u
+bash <(curl -L https://raw.githubusercontent.com/zero-MK/7th-vim/master/install.sh) -u
 # or
-bash <(wget --no-check-certificate https://raw.githubusercontent.com/dofy/7th-vim/master/install.sh -O -) -u
+bash <(wget --no-check-certificate https://raw.githubusercontent.com/zero-MK/7th-vim/master/install.sh -O -) -u
 ```
 
 ## Customize
@@ -104,7 +104,6 @@ vim ~/.vimrc.local
 | [junegunn / **fzf.vim**][plug12]                       | 强大、高效的搜索引擎       |
 | [chxuan / **change-colorscheme**][plug13]              | 配色方案切换               |
 | [docunext / **closetag.vim**][plug14]                  | 自动关闭 HTML 标签         |
-| [Valloric / **YouCompleteMe**][plug15]                 | 代码自动完成               |
 | [ryanoasis / **vim-devicons**][plug16]                 | Vim Dev Icons              |
 | [tpope / **vim-repeat**][plug17]                       | 增强 . 命令                |
 | [mhinz / **vim-startify**][plug18]                     | 启动页                     |
@@ -149,11 +148,6 @@ vim ~/.vimrc.local
 | `:W`                      | 用 `sudo` 命令保存文件         |
 
 ## Q&A
-
-- 安装依赖：
-  - 由于自动补全插件采用了 `YouCompleteMe`，该插件需要 `Python` 和 `cmake` 所以最好先装好
-  - 安装过程（包括安装 `YouCompleteMe`），以及一些插件需要 `Git`
-  - 安装前会先对依赖的软件包进行检测，并提供安装提示作为参考（不排除以后写成自动安装的可能）
 - 字体的问题：
   - 参考 [issues/2][issues2] 和 [issues/3][issues3]
 
