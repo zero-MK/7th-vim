@@ -130,23 +130,6 @@ create_undo_dir () {
   mkdir -p ~/.vim/.undodir
 }
 
-install_backup () {
-  # remove and backup old files
-  info '>>> Remove and backup old files ...\n'
-  mkdir -p ~/7th-vim-bak
-  mv ~/.vimrc ~/7th-vim-bak
-  mv ~/.vimrc.local ~/7th-vim-bak
-  mv ~/.vimrc.plugins ~/7th-vim-bak
-  mv ~/.vimrc.language ~/7th-vim-bak
-}
-
-update_backup () {
-  # remove and backup old files
-  info '>>> Remove and backup old files ...\n'
-  mkdir -p ~/7th-vim-bak
-  mv ~/.vimrc ~/7th-vim-bak
-}
-
 load_vimrc () {
   # download .vimrc file
   info '>>> Download .vimrc file ...\n'
@@ -204,7 +187,6 @@ run_install () {
   succ '>>> Thanks for Installing The 7th-Vim\n'
   check
   create_undo_dir
-  install_backup
   load_vimrc
   install_plugin
   append_settings
@@ -216,7 +198,6 @@ run_update () {
   logo
   succ '>>> Thanks for Updating The 7th-Vim\n'
   create_undo_dir
-  update_backup
   load_vimrc
   append_settings
   update_plugin
