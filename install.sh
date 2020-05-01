@@ -102,15 +102,6 @@ check () {
     how_to python
   fi
 
-  info '>> Checking cmake ...'
-  if which cmake > /dev/null ; then
-    succ '\t OK!\n'
-  else
-    E=1
-    error '\t NO!\n'
-    how_to cmake
-  fi
-
   if [ $E -ne 0 ] ; then
     warn '>>> The 7th-Vim '
     die 'install failed!\n'
@@ -132,14 +123,6 @@ how_to () {
     info '$ ' ; normal 'sudo apt-get install -y python-dev python3-dev\n'
     info '- for CentOS\n'
     info '$ ' ; normal 'sudo yum install -y python-devel python3-devel\n'
-  elif [ $1 == cmake ] ; then
-    warn 'How to install cmake:\n'
-    info '- for macOS\n'
-    info '$ ' ; normal 'brew install gcc cmake\n'
-    info '- for Ubuntu\n'
-    info '$ ' ; normal 'sudo apt-get install -y cmake\n'
-    info '- for CentOS\n'
-    info '$ ' ; normal 'sudo yum install -y automake gcc gcc-c++ cmake\n'
   fi
 }
 
@@ -168,34 +151,34 @@ load_vimrc () {
   # download .vimrc file
   info '>>> Download .vimrc file ...\n'
   curl -fLo ~/.vimrc \
-    https://raw.githubusercontent.com/dofy/7th-vim/master/vimrc
+    https://raw.githubusercontent.com/zero-MK/7th-vim/master/vimrc
 
   # download .vimrc.language file
   if [ ! -f ~/.vimrc.language ] ; then
     info '>>> Download .vimrc.language file ...\n'
     curl -fLo ~/.vimrc.language \
-      https://raw.githubusercontent.com/dofy/7th-vim/master/vimrc.language
+      https://raw.githubusercontent.com/zero-MK/7th-vim/master/vimrc.language
   fi
 
   # download .vimrc.plugins file
   if [ ! -f ~/.vimrc.plugins ] ; then
     info '>>> Download .vimrc.plugins file ...\n'
     curl -fLo ~/.vimrc.plugins \
-      https://raw.githubusercontent.com/dofy/7th-vim/master/vimrc.plugins
+      https://raw.githubusercontent.com/zero-MK/7th-vim/master/vimrc.plugins
   fi
 
   # download .vimrc.local file
   if [ ! -f ~/.vimrc.local ] ; then
     info '>>> Download .vimrc.local file ...\n'
     curl -fLo ~/.vimrc.local \
-      https://raw.githubusercontent.com/dofy/7th-vim/master/vimrc.local
+      https://raw.githubusercontent.com/zero-MK/7th-vim/master/vimrc.local
   fi
 }
 
 append_settings () {
   # append settings
   curl -f \
-    https://raw.githubusercontent.com/dofy/7th-vim/master/vimrc.append \
+    https://raw.githubusercontent.com/zero-MK/7th-vim/master/vimrc.append \
     >> ~/.vimrc
 }
 
@@ -216,11 +199,6 @@ update_plugin () {
   vim +PlugClean! +PlugUpdate +qal
 }
 
-install_ycm () {
-  info '>>> Install YouCompleteMe ...\n'
-  ~/.vim/bundle/YouCompleteMe/install.py --all
-}
-
 run_install () {
   logo
   succ '>>> Thanks for Installing The 7th-Vim\n'
@@ -229,7 +207,6 @@ run_install () {
   install_backup
   load_vimrc
   install_plugin
-  install_ycm 
   append_settings
   language_support_info
   succ '>>> DONE!\n\n'
